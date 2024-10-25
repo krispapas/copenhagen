@@ -1,53 +1,9 @@
-// pages/_app.tsx
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
- 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+# Initialize git repository locally
+git init
 
-// pages/index.tsx
-import TripPlanner from '@/components/TripPlanner'
- 
-export default function Home() {
-  return (
-    <main className="min-h-screen p-8 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Trip Planner</h1>
-        <TripPlanner />
-      </div>
-    </main>
-  )
-}
+# Add all files to git
+git add .
 
-// components/TripPlanner.tsx
-// [Previous TripPlanner component code goes here]
-
-// styles/globals.css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-// next.config.js
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
-
-module.exports = nextConfig
-
-// tailwind.config.js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+# Create initial commit
+git commit -m "Initial commit: Trip planner setup"
+npx create-next-app@latest trip-planner --typescript --tailwind --use-npm
